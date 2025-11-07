@@ -42,7 +42,7 @@ const Projects = () => {
       id: 'menu-eat-tip-tax',
       title: '해외 결제 현지화 (미국 팁·세금 대응)',
       period: '2025.01 ~ 2025.03',
-      description: '북미 매장 결제 환경에 맞춰 팁(Tip) 및 세금(Tax) 처리 로직을 현지화했습니다. Locale 기반 국가별 분기 처리와 MVVM 패턴을 활용하여 유지보수성을 높였습니다.',
+      description: '북미 매장 결제 환경에 맞춰 팁(Tip) 및 세금(Tax) 처리 로직을 현지화했습니다. Locale 기반 국가별 분기 처리하며 유지보수성을 높였습니다.',
       tech: ['TCP Client', 'Locale', 'SharedPreferences', 'Dialog', 'ViewBinding', 'RecyclerView'],
       features: [
         '국가코드 조건 분기 (US/CA만 팝업 UI 활성화)',
@@ -137,7 +137,7 @@ const Projects = () => {
     },
     {
       id: 'dongnerunner',
-      title: 'DongnaeRunning App',
+      title: '동네런닝 App',
       period: '2025.09 ~ 진행중',
       description: 'Google Maps 기반의 지역 밀착형 러닝 기록 & 커뮤니티 앱 개발. 실시간 GPS 추적 기반 러닝 거리·페이스 자동 측정 및 기록 기능을 구현했습니다.',
       tech: ['Kotlin', 'Jetpack Compose', 'MVVM', 'Hilt', 'Google Maps API', 'Firebase Auth', 'Firestore'],
@@ -147,16 +147,23 @@ const Projects = () => {
         'Polyline 인코딩으로 경로 저장 및 시각화',
         'Google 로그인 연동',
         '사용자별 데이터 분리 저장',
-        '러닝 기록 리스트 UI'
+        '러닝 기록 리스트 UI',
+        '실시간 위치 추적 기반 반경 5km 내 게시글 필터링'
       ],
       achievements: 'Google Maps/Location API, 위도/경도 좌표계, 경로 인코딩/디코딩 등 위치기반 기술 확장 활용',
       images: [
-        { src: '/images/dongnerunner-1.png', alt: 'DongneRunner 스플래시 화면' },
-        { src: '/images/dongnerunner-2.png', alt: 'DongneRunner 로그인 화면' },
-        { src: '/images/dongnerunner-3.png', alt: 'DongneRunner 러닝 시작 화면' },
-        { src: '/images/dongnerunner-4.png', alt: 'DongneRunner 러닝 기록 화면' },
-        { src: '/images/dongnerunner-5.png', alt: 'DongneRunner 커뮤니티 화면' },
-        { src: '/images/dongnerunner-6.png', alt: 'DongneRunner 러닝 경로 상세' }
+        { src: '/images/dongnerunner/google-login.png', alt: 'Google 로그인 화면' },
+        { src: '/images/dongnerunner/google-loginauth.png', alt: 'Google auth' },
+        { src: '/images/dongnerunner/main-dashboard.png', alt: '메인 대시보드' },
+        { src: '/images/dongnerunner/running-start.png', alt: '러닝 시작 화면 (타이머, 거리, 페이스, 심박수)' },
+        { src: '/images/dongnerunner/running-active.png', alt: '러닝 중 화면 (지도 포함)' },
+        { src: '/images/dongnerunner/splash.png', alt: 'DongneRunner 스플래시 화면' },
+        { src: '/images/dongnerunner/running-records.png', alt: '러닝 기록 리스트 화면' },
+        { src: '/images/dongnerunner/running-record-detail.png', alt: '러닝 기록 상세 화면' },
+        { src: '/images/dongnerunner/community.png', alt: '커뮤니티 화면' },
+        { src: '/images/dongnerunner/post-create.png', alt: '게시글 작성 화면' },
+        { src: '/images/dongnerunner/post-detail.png', alt: '게시글 상세 화면 (러닝 경로 포함)' },
+        { src: '/images/dongnerunner/running-route.png', alt: '러닝 경로 상세 화면' }
       ]
     },
     {

@@ -37,7 +37,7 @@ const Navigation = () => {
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('hero')}>
           <img src="/icons/android-icon.svg" alt="Android" className="android-icon" />
-        
+
         </div>
         <ul className="nav-menu">
           <li>
