@@ -17,9 +17,9 @@ const Contact = () => {
   // 2. Email Service 생성 (Gmail 등)
   // 3. Email Template 생성
   // 4. 아래 값들을 환경변수나 여기에 직접 입력
-  const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID';
-  const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID';
-  const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID ;
+  const EMAILJS_TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({
@@ -35,9 +35,7 @@ const Contact = () => {
     setError('');
 
     // EmailJS 설정이 안 되어 있으면 mailto 링크로 대체
-    if (EMAILJS_SERVICE_ID === 'YOUR_SERVICE_ID' || 
-        EMAILJS_TEMPLATE_ID === 'YOUR_TEMPLATE_ID' || 
-        EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
       // mailto 링크로 대체
       const subject = encodeURIComponent(`포트폴리오 사이트 문의: ${formData.name}`);
       const body = encodeURIComponent(`이름: ${formData.name}\n이메일: ${formData.email}\n\n메시지:\n${formData.message}`);
@@ -52,29 +50,41 @@ const Contact = () => {
     }
 
     try {
-      // EmailJS 초기화
+      // EmailJS 초기화 (Public Key 사용)
       emailjs.init(EMAILJS_PUBLIC_KEY);
 
-      // 이메일 전송
-      await emailjs.send(
+      // 템플릿 파라미터 준비
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_email: 'seojh7816@gmail.com'
+      };
+
+      console.log('전송 시도:', {
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID,
+        params: templateParams
+      });
+
+      // EmailJS 이메일 전송
+      const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_email: 'seojh7816@gmail.com'
-        }
+        templateParams
       );
 
+      console.log('이메일 전송 성공:', result);
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
       setTimeout(() => {
         setSubmitted(false);
       }, 5000);
     } catch (err) {
-      console.error('EmailJS Error:', err);
-      setError('메일 전송에 실패했습니다. 직접 이메일로 연락주시거나 잠시 후 다시 시도해주세요.');
+      console.error('EmailJS Error 상세:', err);
+      console.error('Error Status:', err.status);
+      console.error('Error Text:', err.text);
+      setError(`메일 전송에 실패했습니다. (상태: ${err.status || 'N/A'}, 오류: ${err.text || err.message || '알 수 없는 오류'}) 직접 이메일로 연락주시거나 잠시 후 다시 시도해주세요.`);
     } finally {
       setIsSubmitting(false);
     }

@@ -36,7 +36,8 @@ const Navigation = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('hero')}>
-          서장호
+          <img src="/icons/android-icon.svg" alt="Android" className="android-icon" />
+        
         </div>
         <ul className="nav-menu">
           <li>

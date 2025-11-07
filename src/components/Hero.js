@@ -8,8 +8,7 @@ const Hero = () => {
         <h1 className="hero-name">서장호</h1>
         <h2 className="hero-title">
           ANDROID DEVELOPER,<br />
-          MOBILE APP DEVELOPER, &<br />
-          FULL-STACK DEVELOPER
+          MOBILE APP DEVELOPER <br />
         </h2>
         <p className="hero-subtitle">
           안드로이드 기반 모바일 서비스 기획부터 배포까지 경험한 개발자
