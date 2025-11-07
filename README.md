@@ -58,3 +58,4 @@ npm run build
 
 빌드 후 `build/` 폴더의 내용을 정적 호스팅 서비스(Netlify, Vercel, GitHub Pages 등)에 업로드하세요.
 # resume_site
+# resume_site
