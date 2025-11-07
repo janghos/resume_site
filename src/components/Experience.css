@@ -1,7 +1,7 @@
 .experience {
   padding: 6rem 2rem;
-  background: #fff;
-  color: #000;
+  background: var(--bg-dark);
+  color: var(--text-primary);
 }
 
 .experience-list {
@@ -14,15 +14,15 @@
 
 .experience-item {
   padding: 2rem;
-  border-left: 3px solid #ff6b35;
-  background: #fafafa;
+  border-left: 3px solid var(--android-green);
+  background: var(--bg-dark-secondary);
   border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .experience-item:hover {
   transform: translateX(5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(61, 220, 132, 0.2);
 }
 
 .experience-header {
@@ -42,14 +42,21 @@
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .experience-company {
   font-size: 1.1rem;
   margin: 0;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
+}
+
+.experience-location-desc {
+  font-size: 0.9rem;
+  margin: 0.3rem 0 0 0;
+  color: var(--text-tertiary);
+  font-style: italic;
 }
 
 .experience-meta {
@@ -61,27 +68,27 @@
 
 .experience-period {
   font-size: 0.95rem;
-  color: #ff6b35;
+  color: var(--android-green);
   font-weight: 500;
 }
 
-.experience-location-desc {
-  font-size: 0.9rem;
-  margin: 0.3rem 0 0 0;
-  color: #999;
-  font-style: italic;
+.experience-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 1rem 0;
 }
 
 .experience-achievements {
   margin-top: 1.5rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(61, 220, 132, 0.2);
 }
 
 .experience-achievements h4 {
   font-size: 1.1rem;
   margin: 0 0 1rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .experience-achievements ul {
@@ -94,7 +101,7 @@
   padding: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -102,15 +109,8 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #ff6b35;
+  color: var(--android-green);
   font-weight: bold;
-}
-
-.experience-description {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #666;
-  margin: 1rem 0;
 }
 
 .experience-skills {
@@ -123,11 +123,11 @@
 .experience-skill-tag {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: #fff;
-  border: 1px solid #e0e0e0;
+  background: rgba(61, 220, 132, 0.1);
+  border: 1px solid rgba(61, 220, 132, 0.3);
   border-radius: 4px;
   font-size: 0.85rem;
-  color: #333;
+  color: var(--android-green-light);
 }
 
 @media (max-width: 768px) {
@@ -147,4 +147,3 @@
     align-items: flex-start;
   }
 }
-

@@ -12,7 +12,7 @@ const Certifications = () => {
   ];
 
   return (
-    <section className="certifications">
+    <section id="certifications" className="certifications">
       <div className="container">
         <h2 className="section-title">Certifications</h2>
         <div className="certifications-grid">

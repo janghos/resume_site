@@ -1,25 +1,19 @@
 .App {
   width: 100%;
   overflow-x: hidden;
+  background: var(--bg-dark);
 }
 
 .footer {
   padding: 2rem;
   text-align: center;
-  background: #000;
-  color: #fff;
+  background: var(--bg-dark-secondary);
+  color: var(--text-secondary);
   font-size: 0.9rem;
+  border-top: 1px solid rgba(61, 220, 132, 0.1);
 }
 
 .footer p {
   margin: 0;
   opacity: 0.7;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }

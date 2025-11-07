@@ -1,7 +1,7 @@
 .education {
   padding: 6rem 2rem;
-  background: #fff;
-  color: #000;
+  background: var(--bg-dark-secondary);
+  color: var(--text-primary);
 }
 
 .education-list {
@@ -14,27 +14,33 @@
 
 .education-item {
   padding: 2rem;
-  border-left: 3px solid #ff6b35;
-  background: #fafafa;
+  border-left: 3px solid var(--android-green);
+  background: var(--bg-dark-tertiary);
   border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(61, 220, 132, 0.2);
 }
 
 .education-school {
   font-size: 1.5rem;
   font-weight: 600;
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .education-major {
   font-size: 1.1rem;
   margin: 0 0 0.5rem 0;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .education-period {
   font-size: 0.95rem;
-  color: #999;
+  color: var(--text-tertiary);
   margin: 0;
 }
 

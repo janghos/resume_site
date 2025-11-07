@@ -3,11 +3,13 @@ import './Projects.css';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isMenuEatDrawerOpen, setIsMenuEatDrawerOpen] = useState(false);
+  const [selectedMenuEatProject, setSelectedMenuEatProject] = useState(null);
 
-  const projects = [
+  const menuEatProjects = [
     {
       id: 'menu-eat-split-payment',
-      title: '메뉴잇 - 분할결제(더치페이) 기능 개선',
+      title: '분할결제(더치페이) 기능 개선',
       period: '2025.07 ~ 2025.09',
       description: '기존 더치페이 기능의 한계를 개선하여 금액별 분할결제와 메뉴별 분할결제를 지원하는 기능을 구현했습니다. SQLite 기반 상태 관리와 JSON 직렬화를 통한 결제 상태 복원 기능을 추가하여 앱 재실행 시에도 결제 상태를 유지할 수 있도록 했습니다.',
       tech: ['SQLite', 'Retrofit2', 'SharedPreferences', 'Enum class', 'Dialog', 'ViewBinding'],
@@ -23,7 +25,7 @@ const Projects = () => {
     },
     {
       id: 'menu-eat-printer-retry',
-      title: '메뉴잇 - 프린터 출력 실패 자동 재출력 기능',
+      title: '프린터 출력 실패 자동 재출력 기능',
       period: '2025.05 ~ 2025.06',
       description: '프린터 출력 실패 시 자동으로 재출력을 시도하는 기능을 구현했습니다. Queue 기반 구조로 중복/동시성 문제를 방지하고, 사용자 선택에 따른 재시도 중단 옵션을 제공합니다.',
       tech: ['SQLite', 'Retrofit', 'SharedPreferences', 'CoroutineScope', 'Synchronized', 'LAN'],
@@ -38,7 +40,7 @@ const Projects = () => {
     },
     {
       id: 'menu-eat-tip-tax',
-      title: '메뉴잇 - 해외 결제 현지화 (미국 팁·세금 대응)',
+      title: '해외 결제 현지화 (미국 팁·세금 대응)',
       period: '2025.01 ~ 2025.03',
       description: '북미 매장 결제 환경에 맞춰 팁(Tip) 및 세금(Tax) 처리 로직을 현지화했습니다. Locale 기반 국가별 분기 처리와 MVVM 패턴을 활용하여 유지보수성을 높였습니다.',
       tech: ['TCP Client', 'Locale', 'SharedPreferences', 'Dialog', 'ViewBinding', 'RecyclerView'],
@@ -54,7 +56,7 @@ const Projects = () => {
     },
     {
       id: 'menu-eat-ui-ux',
-      title: '메뉴잇 - UI/UX 리뉴얼 및 다크 테마 적용',
+      title: 'UI/UX 리뉴얼 및 다크 테마 적용',
       period: '2024.07 ~ 2024.10',
       description: '기존 POS/메뉴판 앱의 UI 노후화 문제를 해결하고, 다양한 매장 환경에서 사용성을 높이기 위해 전면적인 UI/UX 리뉴얼을 진행했습니다.',
       tech: ['Material Design', 'Theme', 'ViewBinding', 'RecyclerView', 'Dialog', 'Navigation Component', 'MPAndroidChart', 'Jetpack Compose'],
@@ -70,7 +72,7 @@ const Projects = () => {
     },
     {
       id: 'menu-eat-localization',
-      title: '메뉴잇 - POS + 테이블오더 다국어(Localization) 지원 개선',
+      title: 'POS + 테이블오더 다국어(Localization) 지원 개선',
       period: '2024.01 ~ 2024.03',
       description: '해외 매장 확장에 대비해 다국어 지원 구조를 정비하고, 언어별 텍스트 길이 차이에 따른 UI 깨짐 문제를 해결했습니다.',
       tech: ['Locale', 'string.xml', 'SharedPreferences', 'ContextWrapper', 'ViewBinding'],
@@ -82,7 +84,10 @@ const Projects = () => {
         '코드 중복 약 25% 감소'
       ],
       achievements: '다양한 언어 환경에서도 동일한 UI 구조와 사용자 경험 유지'
-    },
+    }
+  ];
+
+  const otherProjects = [
     {
       id: 'fila-erp',
       title: 'FILA Mobile ERP 앱 신규 개발',
@@ -175,8 +180,26 @@ const Projects = () => {
     }
   ];
 
+  const handleMenuEatClick = () => {
+    setIsMenuEatDrawerOpen(true);
+    setSelectedMenuEatProject(null);
+  };
+
+  const handleMenuEatProjectClick = (project) => {
+    setSelectedMenuEatProject(project);
+  };
+
+  const handleCloseDrawer = () => {
+    setIsMenuEatDrawerOpen(false);
+    setSelectedMenuEatProject(null);
+  };
+
+  const handleBackFromDetail = () => {
+    setSelectedMenuEatProject(null);
+  };
+
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <div className="container">
         <h2 className="section-title">My Work</h2>
         <p className="projects-intro">
@@ -186,7 +209,33 @@ const Projects = () => {
         </p>
         
         <div className="projects-grid">
-          {projects.map((project) => (
+          {/* 메뉴잇 통합 프로젝트 */}
+          <div className="project-card menu-eat-card" onClick={handleMenuEatClick}>
+            <div className="project-header">
+              <div>
+                <h3 className="project-title">메뉴잇</h3>
+                <p className="project-period">2024.01 ~ 현재</p>
+              </div>
+              <div className="menu-eat-badge">
+                <span>{menuEatProjects.length}개 프로젝트</span>
+              </div>
+            </div>
+            <p className="project-description">
+              식당/카페 테이블오더 앱 개발 회사에서 진행한 다양한 프로젝트들입니다. 
+              POS 연동, 결제 시스템, UI/UX 개선 등 핵심 기능들을 개발했습니다.
+            </p>
+            <div className="project-tech">
+              <span className="tech-tag">Kotlin</span>
+              <span className="tech-tag">Java</span>
+              <span className="tech-tag">SQLite</span>
+              <span className="tech-tag">Retrofit2</span>
+              <span className="tech-tag">MVVM</span>
+              <span className="tech-tag">Material Design</span>
+            </div>
+          </div>
+
+          {/* 다른 프로젝트들 */}
+          {otherProjects.map((project) => (
             <div key={project.id} className="project-card">
               <div className="project-header">
                 <div>
@@ -195,7 +244,10 @@ const Projects = () => {
                 </div>
                 <button 
                   className="show-project-btn"
-                  onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setSelectedProject(selectedProject === project.id ? null : project.id);
+                  }}
                 >
                   {selectedProject === project.id ? '숨기기' : '프로젝트 보기'}
                 </button>
@@ -277,6 +329,78 @@ const Projects = () => {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* 메뉴잇 드로어 */}
+      <div className={`drawer-overlay ${isMenuEatDrawerOpen ? 'open' : ''}`} onClick={handleCloseDrawer}></div>
+      <div className={`drawer ${isMenuEatDrawerOpen ? 'open' : ''}`}>
+        {!selectedMenuEatProject ? (
+          <>
+            <div className="drawer-header">
+              <h2>메뉴잇 프로젝트</h2>
+              <button className="drawer-close-btn" onClick={handleCloseDrawer}>✕</button>
+            </div>
+            <div className="drawer-content">
+              <div className="menu-eat-projects-list">
+                {menuEatProjects.map((project) => (
+                  <div 
+                    key={project.id} 
+                    className="menu-eat-project-item"
+                    onClick={() => handleMenuEatProjectClick(project)}
+                  >
+                    <h3>{project.title}</h3>
+                    <p className="menu-eat-project-period">{project.period}</p>
+                    <p className="menu-eat-project-desc">{project.description}</p>
+                    <div className="menu-eat-project-tech">
+                      {project.tech.slice(0, 4).map((tech, index) => (
+                        <span key={index} className="tech-tag-small">{tech}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="drawer-detail">
+            <div className="drawer-header">
+              <button className="drawer-back-btn" onClick={handleBackFromDetail}>←</button>
+              <h2>{selectedMenuEatProject.title}</h2>
+              <button className="drawer-close-btn" onClick={handleCloseDrawer}>✕</button>
+            </div>
+            <div className="drawer-content">
+              <div className="drawer-detail-content">
+                <p className="drawer-detail-period">{selectedMenuEatProject.period}</p>
+                <p className="drawer-detail-description">{selectedMenuEatProject.description}</p>
+                
+                <div className="drawer-detail-section">
+                  <h4>기술 스택</h4>
+                  <div className="project-tech">
+                    {selectedMenuEatProject.tech.map((tech, index) => (
+                      <span key={index} className="tech-tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="drawer-detail-section">
+                  <h4>주요 기능</h4>
+                  <ul className="features-list">
+                    {selectedMenuEatProject.features.map((feature, index) => (
+                      <li key={index}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                {selectedMenuEatProject.achievements && (
+                  <div className="project-achievements">
+                    <h4>성과</h4>
+                    <p>{selectedMenuEatProject.achievements}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

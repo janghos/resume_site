@@ -1,14 +1,14 @@
 .projects {
   padding: 6rem 2rem;
-  background: #f8f8f8;
-  color: #000;
+  background: var(--bg-dark-secondary);
+  color: var(--text-primary);
 }
 
 .projects-intro {
   text-align: center;
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #666;
+  color: var(--text-secondary);
   max-width: 800px;
   margin: 0 auto 4rem;
 }
@@ -21,15 +21,17 @@
 }
 
 .project-card {
-  background: #fff;
+  background: var(--bg-dark-tertiary);
   padding: 2.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  border: 1px solid rgba(61, 220, 132, 0.1);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
 }
 
 .project-card:hover {
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 20px rgba(61, 220, 132, 0.2);
+  border-color: var(--android-green);
+  transform: translateY(-3px);
 }
 
 .project-header {
@@ -45,28 +47,36 @@
   font-size: 2rem;
   font-weight: 600;
   margin: 0;
-  color: #333;
+  color: var(--android-green);
+}
+
+.project-period {
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  margin: 0.3rem 0 0 0;
 }
 
 .show-project-btn {
   padding: 0.6rem 1.5rem;
-  background: #ff6b35;
-  color: #fff;
+  background: var(--android-green);
+  color: #000;
   border: none;
   border-radius: 4px;
   font-size: 0.9rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .show-project-btn:hover {
-  background: #e55a2b;
+  background: var(--android-green-dark);
+  transform: scale(1.05);
 }
 
 .project-description {
   font-size: 1rem;
   line-height: 1.7;
-  color: #666;
+  color: var(--text-secondary);
   margin: 0 0 1.5rem 0;
 }
 
@@ -79,8 +89,9 @@
 .tech-tag {
   display: inline-block;
   padding: 0.4rem 0.8rem;
-  background: #ff6b35;
-  color: #fff;
+  background: rgba(61, 220, 132, 0.1);
+  border: 1px solid rgba(61, 220, 132, 0.3);
+  color: var(--android-green-light);
   border-radius: 4px;
   font-size: 0.85rem;
   font-weight: 500;
@@ -89,13 +100,13 @@
 .project-details {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(61, 220, 132, 0.2);
 }
 
 .project-details h4 {
   font-size: 1.3rem;
   margin: 0 0 1rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .features-list {
@@ -108,7 +119,7 @@
   padding: 0.5rem 0;
   padding-left: 1.5rem;
   position: relative;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.6;
 }
 
@@ -116,7 +127,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #ff6b35;
+  color: var(--android-green);
   font-weight: bold;
 }
 
@@ -127,7 +138,7 @@
 .project-images h4 {
   font-size: 1.3rem;
   margin: 0 0 1rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .images-grid {
@@ -145,13 +156,14 @@
   width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   display: block;
 }
 
 .image-placeholder {
   aspect-ratio: 9/16;
-  background: #f0f0f0;
+  background: var(--bg-dark-secondary);
+  border: 1px dashed rgba(61, 220, 132, 0.3);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -159,7 +171,7 @@
   justify-content: center;
   padding: 1rem;
   text-align: center;
-  color: #999;
+  color: var(--text-tertiary);
 }
 
 .image-placeholder p {
@@ -167,29 +179,28 @@
   font-size: 0.9rem;
 }
 
-.project-period {
-  font-size: 0.9rem;
-  color: #999;
-  margin: 0.3rem 0 0 0;
+.image-placeholder small {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
 }
 
 .project-achievements {
   margin-top: 2rem;
   padding: 1.5rem;
-  background: #fff5f0;
-  border-left: 3px solid #ff6b35;
+  background: rgba(61, 220, 132, 0.1);
+  border-left: 3px solid var(--android-green);
   border-radius: 4px;
 }
 
 .project-achievements h4 {
   font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
-  color: #ff6b35;
+  color: var(--android-green);
 }
 
 .project-achievements p {
   margin: 0;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.7;
 }
 
@@ -200,7 +211,7 @@
 .project-links h4 {
   font-size: 1.2rem;
   margin: 0 0 1rem 0;
-  color: #333;
+  color: var(--android-green);
 }
 
 .links-container {
@@ -212,33 +223,256 @@
 .project-link {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background: #ff6b35;
-  color: #fff;
+  background: var(--android-green);
+  color: #000;
   text-decoration: none;
   border-radius: 4px;
   font-size: 0.9rem;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .project-link:hover {
-  background: #e55a2b;
+  background: var(--android-green-dark);
+  transform: scale(1.05);
+}
+
+.menu-eat-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-eat-card::after {
+  content: '→';
+  position: absolute;
+  right: 2.5rem;
+  top: 2.5rem;
+  font-size: 1.5rem;
+  color: var(--android-green);
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-eat-card:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+.menu-eat-badge {
+  padding: 0.4rem 0.8rem;
+  background: rgba(61, 220, 132, 0.2);
+  border: 1px solid var(--android-green);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--android-green);
+  font-weight: 600;
+}
+
+/* 드로어 스타일 */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.drawer-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 90%;
+  max-width: 600px;
+  height: 100vh;
+  background: var(--bg-dark-secondary);
+  z-index: 1001;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid rgba(61, 220, 132, 0.2);
+}
+
+.drawer.open {
+  right: 0;
+}
+
+.drawer-header {
+  padding: 2rem;
+  border-bottom: 1px solid rgba(61, 220, 132, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-dark-tertiary);
+}
+
+.drawer-header h2 {
+  margin: 0;
+  color: var(--android-green);
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+.drawer-close-btn,
+.drawer-back-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.drawer-close-btn:hover,
+.drawer-back-btn:hover {
+  background: rgba(61, 220, 132, 0.1);
+  color: var(--android-green);
+}
+
+.drawer-back-btn {
+  margin-right: 1rem;
+}
+
+.drawer-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.menu-eat-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.menu-eat-project-item {
+  padding: 1.5rem;
+  background: var(--bg-dark-tertiary);
+  border: 1px solid rgba(61, 220, 132, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-eat-project-item:hover {
+  border-color: var(--android-green);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(61, 220, 132, 0.2);
+}
+
+.menu-eat-project-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--android-green);
+  font-size: 1.2rem;
+}
+
+.menu-eat-project-period {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+}
+
+.menu-eat-project-desc {
+  margin: 0 0 1rem 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-eat-project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag-small {
+  padding: 0.3rem 0.6rem;
+  background: rgba(61, 220, 132, 0.1);
+  border: 1px solid rgba(61, 220, 132, 0.3);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: var(--android-green-light);
+}
+
+.drawer-detail {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.drawer-detail-content {
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.drawer-detail-period {
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.drawer-detail-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.drawer-detail-section {
+  margin-bottom: 2rem;
+}
+
+.drawer-detail-section h4 {
+  color: var(--android-green);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
-  .projects {
-    padding: 4rem 1.5rem;
+  .drawer {
+    width: 100%;
+    max-width: 100%;
   }
   
-  .project-card {
+  .drawer-header {
     padding: 1.5rem;
   }
   
-  .project-title {
-    font-size: 1.5rem;
+  .drawer-content {
+    padding: 1.5rem;
   }
   
-  .images-grid {
-    grid-template-columns: 1fr;
+  .menu-eat-project-item {
+    padding: 1rem;
   }
 }
-

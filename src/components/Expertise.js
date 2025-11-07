@@ -21,7 +21,7 @@ const Expertise = () => {
   ];
 
   return (
-    <section className="expertise">
+    <section id="expertise" className="expertise">
       <div className="container">
         <h2 className="section-title">My Expertise</h2>
         <div className="expertise-grid">
