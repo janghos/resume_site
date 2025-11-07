@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# 서장호 이력서 홈페이지
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+포트폴리오 및 이력서를 소개하는 개인 웹사이트입니다.
 
-## Available Scripts
+## 프로젝트 구조
 
-In the project directory, you can run:
+```
+src/
+├── components/
+│   ├── Hero.js          # 메인 히어로 섹션
+│   ├── Expertise.js     # 전문 분야 섹션
+│   ├── Projects.js      # 프로젝트 섹션
+│   ├── Experience.js    # 경력 섹션
+│   └── Contact.js       # 연락처 섹션
+└── App.js               # 메인 앱 컴포넌트
+```
 
-### `npm start`
+## 이미지 추가하기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+프로젝트 스크린샷을 추가하려면 `public/images/` 폴더에 다음 파일들을 추가하세요:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `dongnerunner-1.png` - 스플래시 화면
+- `dongnerunner-2.png` - 로그인 화면
+- `dongnerunner-3.png` - 러닝 시작 화면
+- `dongnerunner-4.png` - 러닝 기록 화면
+- `dongnerunner-5.png` - 커뮤니티 화면
+- `dongnerunner-6.png` - 러닝 경로 상세
 
-### `npm test`
+이미지가 없으면 자동으로 placeholder가 표시됩니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 실행하기
 
-### `npm run build`
+### 개발 모드
+```bash
+npm start
+```
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 프로덕션 빌드
+```bash
+npm run build
+```
+빌드된 파일은 `build/` 폴더에 생성됩니다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 커스터마이징
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+각 섹션의 내용은 해당 컴포넌트 파일에서 수정할 수 있습니다:
 
-### `npm run eject`
+- **Hero**: `src/components/Hero.js` - 이름과 타이틀
+- **Expertise**: `src/components/Expertise.js` - 전문 분야 및 스킬
+- **Projects**: `src/components/Projects.js` - 프로젝트 목록 및 설명
+- **Experience**: `src/components/Experience.js` - 경력 사항
+- **Contact**: `src/components/Contact.js` - 연락처 폼
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+스타일은 각 컴포넌트의 `.css` 파일에서 수정할 수 있습니다.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 배포
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+빌드 후 `build/` 폴더의 내용을 정적 호스팅 서비스(Netlify, Vercel, GitHub Pages 등)에 업로드하세요.

@@ -1,0 +1,50 @@
+.education {
+  padding: 6rem 2rem;
+  background: #fff;
+  color: #000;
+}
+
+.education-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.education-item {
+  padding: 2rem;
+  border-left: 3px solid #ff6b35;
+  background: #fafafa;
+  border-radius: 4px;
+}
+
+.education-school {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #333;
+}
+
+.education-major {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem 0;
+  color: #666;
+}
+
+.education-period {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .education {
+    padding: 4rem 1.5rem;
+  }
+  
+  .education-item {
+    padding: 1.5rem;
+  }
+}
+
