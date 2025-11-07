@@ -210,7 +210,7 @@ const Projects = () => {
       <div className="container">
         <h2 className="section-title">My Work</h2>
         <p className="projects-intro">
-          확장 가능하고 반응형 웹 및 하이브리드 모바일 앱을 개발하고 배포했습니다.<br />
+          네이티브 / 하이브리드 모바일 앱을 개발하고 배포했습니다.<br />
           직관적이고 동적인 인터랙션을 갖춘 고성능 애플리케이션에 집중합니다.<br />
           데이터 분석과 시각화에도 관심이 있습니다.
         </p>
@@ -233,11 +233,11 @@ const Projects = () => {
             </p>
             <div className="project-tech">
               <span className="tech-tag">Kotlin</span>
+              <span className="tech-tag">Coroutine</span>
               <span className="tech-tag">Java</span>
               <span className="tech-tag">SQLite</span>
-              <span className="tech-tag">Retrofit2</span>
-              <span className="tech-tag">MVVM</span>
-              <span className="tech-tag">Material Design</span>
+              <span className="tech-tag">Http Client</span>
+              <span className="tech-tag">TCP</span>
             </div>
           </div>
 

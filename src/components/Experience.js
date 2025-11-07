@@ -4,8 +4,8 @@ import './Experience.css';
 const Experience = () => {
   const experiences = [
     {
-      title: '안드로이드 개발자',
-      company: '메뉴잇',
+      title: '메뉴잇',
+      company: 'Android Developer',
       period: '2024.03 ~ 현재',
       location: '식당/카페 테이블오더 앱 개발 회사',
       description: '외부 POS 연동 및 자체 POS-메뉴보드 APP 개발 및 유지보수. 주문·결제·주방 프린터 연동 전 과정 담당 (TCP Socket 기반 통신). 분할 결제, 옵션 구성, 자동 품절 초기화 등 매장 운영 핵심 기능 구현. SQLite + 메시지 큐 기반 안정적 데이터 저장/재전송 로직 설계.',
@@ -21,8 +21,8 @@ const Experience = () => {
       skills: ['Kotlin', 'Java', 'SQLite', 'Retrofit2', 'Coroutine', 'TCP Socket', 'MVVM', 'Material Design']
     },
     {
-      title: '안드로이드 개발자',
-      company: '라드씨엔에스',
+      title: '라드씨엔에스',
+      company: 'Android Developer',
       period: '2022.10 ~ 2024.02',
       location: '웹/앱 에이전시 회사',
       description: '뉴발란스, FILA ERP, 애슐리, 발란 APP 개발 및 유지보수 참여. 쇼핑·브랜드 앱 유지보수 및 신규 기능 개발 (결제, 회원·리뷰 관리 등). 기획·디자인 협업을 통한 앱 UI/UX 개선.',
