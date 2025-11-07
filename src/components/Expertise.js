@@ -9,14 +9,14 @@ const Expertise = () => {
       skills: ['Kotlin', 'Java', 'Coroutine', 'Jetpack Compose', 'MVVM', 'Retrofit2', 'Room', 'SQLite']
     },
     {
-      title: 'Backend & API',
-      description: 'Spring Boot 기초 경험, RESTful API 설계 및 연동. Firebase 서비스 통합, Google Analytics 4 태깅, OAuth 인증 구현 경험이 있습니다.',
-      skills: ['Spring Boot', 'RESTful API', 'Firebase', 'GA4', 'OAuth', 'MySQL', 'SQLite']
-    },
-    {
       title: 'Mobile UI/UX',
       description: 'Material Design 가이드라인 준수, 다크 테마 구현, 커스텀 컴포넌트 개발. 사용자 경험 개선과 성능 최적화에 중점을 둡니다.',
       skills: ['Material Design', 'Dark Theme', 'Custom Components', 'UI/UX Design', 'ViewBinding']
+    },
+    {
+      title: 'Backend & API',
+      description: 'Spring Boot 기초 경험, RESTful API 설계 및 연동. Firebase 서비스 통합, Google Analytics 4 태깅, OAuth 인증 구현 경험이 있습니다.',
+      skills: ['Spring Boot', 'RESTful API', 'Firebase', 'GA4', 'OAuth', 'MySQL', 'SQLite']
     }
   ];
 
@@ -38,8 +38,7 @@ const Expertise = () => {
           ))}
         </div>
         <div className="quote">
-          <p>"스타일은 왔다 갔다 하지만, 좋은 디자인은 스타일이 아닌 언어다."</p>
-          <p className="quote-author">- Massimo Vignelli</p>
+          <p>안드로이드 개발을 중심으로, 모바일 UI/UX부터 백엔드 API까지<br />다방면의 기술을 경험한 모바일 개발자입니다.</p>
         </div>
       </div>
     </section>
