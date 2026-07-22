@@ -8,6 +8,20 @@ const Projects = () => {
 
   const menuEatProjects = [
     {
+      id: 'menu-eat-barrier-free',
+      title: '베리어프리(접근성) 개선',
+      period: '2025.10 ~ 2026.01',
+      description: 'TTS 기반 시각 장애인 접근성 기능을 구현했습니다. 메뉴·주문 정보 자동 음성 안내 및 접근성 UI를 최적화하여 다양한 사용자 환경에 대응했습니다.',
+      tech: ['TextToSpeech', 'ContentDescription', 'AccessibilityService', 'TalkBack', 'ViewBinding'],
+      features: [
+        'TTS 기반 메뉴·주문 정보 자동 음성 안내',
+        '화면 내 텍스트 ContentDescription 체계화',
+        'TalkBack 호환성 검증 및 포커스 순서 정비',
+        '시각 장애인 사용자 대상 접근성 UI 최적화'
+      ],
+      achievements: '시각 장애인 사용자도 독립적으로 사용 가능한 접근성 환경 구현'
+    },
+    {
       id: 'menu-eat-split-payment',
       title: '분할결제(더치페이) 기능 개선',
       period: '2025.07 ~ 2025.09',
@@ -37,6 +51,21 @@ const Projects = () => {
         '재출력 소요 시간 30% 이상 단축'
       ],
       achievements: '재출력 소요 시간 30% 이상 단축, 다양한 출력 타입을 동일 로직으로 처리 가능'
+    },
+    {
+      id: 'menu-eat-kds',
+      title: 'KDS 고도화',
+      period: '2025.04 ~ 2025.05',
+      description: '주방 디스플레이(KDS) 다중 스테이션 환경에서 스테이션별 독립 완료 처리 시스템을 설계·구현했습니다. 서버 영속 상태와 기기 간 메모리 상태를 분리 설계하여 스테이션 간 간섭 없는 실시간 동기화를 구현했습니다.',
+      tech: ['TCP Socket', 'SharedPreferences', 'RecyclerView', 'ViewModel', 'Timer', 'Fragment'],
+      features: [
+        '스테이션별 독립 완료 처리 (partial_complete_cook TCP 커맨드 신설)',
+        '서버 영속 상태(cook)와 기기 간 메모리 상태(item_complete) 분리 설계',
+        'KDS 노출 메뉴 필터링 (스테이션별 담당 메뉴 지정, SharedPreferences 저장)',
+        '주문 경과시간 알림 (20초 주기 타이머, 임계치 초과 시 핑크 헤더 경고)',
+        '다중 스테이션 환경 partial restore 지원'
+      ],
+      achievements: '다중 스테이션 KDS 환경에서 스테이션 간 간섭 없는 독립 완료 처리 구현'
     },
     {
       id: 'menu-eat-tip-tax',
