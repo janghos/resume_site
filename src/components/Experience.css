@@ -79,44 +79,6 @@
   margin: 1rem 0;
 }
 
-.experience-features {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(61, 220, 132, 0.2);
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.experience-feature-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  margin: 0 0 0.5rem 0;
-  padding-left: 1rem;
-  border-left: 2px solid var(--android-green);
-}
-
-.experience-feature-subs {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.experience-feature-sub {
-  padding: 0.3rem 0 0.3rem 2rem;
-  position: relative;
-  color: var(--text-secondary);
-  line-height: 1.7;
-  font-size: 0.92rem;
-}
-
-.experience-feature-sub::before {
-  content: '–';
-  position: absolute;
-  left: 1rem;
-  color: var(--android-green);
-}
 
 .experience-achievements {
   margin-top: 1.5rem;
