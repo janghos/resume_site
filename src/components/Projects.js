@@ -8,6 +8,21 @@ const Projects = () => {
 
   const menuEatProjects = [
     {
+      id: 'menu-eat-kds',
+      title: 'KDS 고도화',
+      period: '2026.04 ~ 2026.05',
+      description: '주방 디스플레이(KDS) 다중 스테이션 환경에서 스테이션별 독립 완료 처리 시스템을 설계·구현했습니다. 서버 영속 상태와 기기 간 메모리 상태를 분리 설계하여 스테이션 간 간섭 없는 실시간 동기화를 구현했습니다.',
+      tech: ['TCP Socket', 'SharedPreferences', 'RecyclerView', 'ViewModel', 'Timer', 'Fragment'],
+      features: [
+        '스테이션별 독립 완료 처리 (partial_complete_cook TCP 커맨드 신설)',
+        '서버 영속 상태(cook)와 기기 간 메모리 상태(item_complete) 분리 설계',
+        'KDS 노출 메뉴 필터링 (스테이션별 담당 메뉴 지정, SharedPreferences 저장)',
+        '주문 경과시간 알림 (20초 주기 타이머, 임계치 초과 시 핑크 헤더 경고)',
+        '다중 스테이션 환경 partial restore 지원'
+      ],
+      achievements: '다중 스테이션 KDS 환경에서 스테이션 간 간섭 없는 독립 완료 처리 구현'
+    },
+    {
       id: 'menu-eat-barrier-free',
       title: '베리어프리(접근성) 개선',
       period: '2025.10 ~ 2026.01',
@@ -51,21 +66,6 @@ const Projects = () => {
         '재출력 소요 시간 30% 이상 단축'
       ],
       achievements: '재출력 소요 시간 30% 이상 단축, 다양한 출력 타입을 동일 로직으로 처리 가능'
-    },
-    {
-      id: 'menu-eat-kds',
-      title: 'KDS 고도화',
-      period: '2025.04 ~ 2025.05',
-      description: '주방 디스플레이(KDS) 다중 스테이션 환경에서 스테이션별 독립 완료 처리 시스템을 설계·구현했습니다. 서버 영속 상태와 기기 간 메모리 상태를 분리 설계하여 스테이션 간 간섭 없는 실시간 동기화를 구현했습니다.',
-      tech: ['TCP Socket', 'SharedPreferences', 'RecyclerView', 'ViewModel', 'Timer', 'Fragment'],
-      features: [
-        '스테이션별 독립 완료 처리 (partial_complete_cook TCP 커맨드 신설)',
-        '서버 영속 상태(cook)와 기기 간 메모리 상태(item_complete) 분리 설계',
-        'KDS 노출 메뉴 필터링 (스테이션별 담당 메뉴 지정, SharedPreferences 저장)',
-        '주문 경과시간 알림 (20초 주기 타이머, 임계치 초과 시 핑크 헤더 경고)',
-        '다중 스테이션 환경 partial restore 지원'
-      ],
-      achievements: '다중 스테이션 KDS 환경에서 스테이션 간 간섭 없는 독립 완료 처리 구현'
     },
     {
       id: 'menu-eat-tip-tax',

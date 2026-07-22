@@ -9,18 +9,6 @@ const Experience = () => {
       period: '2024.03 ~ 현재',
       location: '식당/카페 테이블오더 앱 개발 회사',
       description: '외부 POS 연동 및 자체 POS-메뉴보드 APP 개발 및 유지보수. 주문·결제·주방 프린터 연동 전 과정 담당 (TCP Socket 기반 통신). 분할 결제, 옵션 구성, 자동 품절 초기화 등 매장 운영 핵심 기능 구현. SQLite + 메시지 큐 기반 안정적 데이터 저장/재전송 로직 설계.',
-      projects: [
-        {
-          title: 'KDS 고도화',
-          period: '2025.04 ~ 2025.05',
-          description: '주방 디스플레이 다중 스테이션 환경에서 스테이션별 독립 완료 처리 시스템 설계·구현. TCP 커맨드 신설 및 서버 영속 상태와 기기 간 메모리 상태 분리 설계로 스테이션 간 간섭 없는 실시간 동기화 구현.'
-        },
-        {
-          title: '베리어프리(접근성) 개선',
-          period: '2025.10 ~ 2026.01',
-          description: 'TTS 기반 시각 장애인 접근성 기능 구현. 메뉴·주문 정보 자동 음성 안내 및 접근성 UI 최적화로 다양한 사용자 환경 대응.'
-        }
-      ],
       achievements: [
         'KDS 다중 스테이션 독립 완료 처리 및 실시간 동기화 시스템 기획·구현 (partial_complete_cook TCP 커맨드 신설, 서버 영속 상태와 기기 간 메모리 상태 분리 설계)',
         '주문 누락률 2% → 0%로 감소',
@@ -68,19 +56,6 @@ const Experience = () => {
                 </div>
               </div>
               <p className="experience-description">{exp.description}</p>
-              {exp.projects && exp.projects.length > 0 && (
-                <div className="experience-projects">
-                  {exp.projects.map((proj, idx) => (
-                    <div key={idx} className="experience-project-item">
-                      <div className="experience-project-header">
-                        <span className="experience-project-title">{proj.title}</span>
-                        <span className="experience-project-period">{proj.period}</span>
-                      </div>
-                      <p className="experience-project-desc">{proj.description}</p>
-                    </div>
-                  ))}
-                </div>
-              )}
               {exp.achievements && exp.achievements.length > 0 && (
                 <div className="experience-achievements">
                   <h4>주요 성과</h4>
